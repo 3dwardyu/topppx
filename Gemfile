@@ -26,7 +26,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# Use f00px to make calls to 500px API
 gem 'f00px'
+
+# Use Oauth for API authentication
 gem "oauth-plugin", "~> 0.4.0"
 
 # Use Capistrano for deployment

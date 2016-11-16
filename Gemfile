@@ -30,8 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # Use f00px to make calls to 500px API
 gem 'f00px'
 
-# Use Oauth for API authentication
-#gem "oauth-plugin", "~> 0.4.0"
+# Use OmniAuth 500px for API authentication
+gem 'omniauth-500px'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

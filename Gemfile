@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'f00px'
 
 # Use Oauth for API authentication
-gem "oauth-plugin", "~> 0.4.0"
+#gem "oauth-plugin", "~> 0.4.0"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

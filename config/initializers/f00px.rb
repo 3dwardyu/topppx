@@ -1,4 +1,4 @@
 F00px.configure do |config|
-  config.consumer_key = ENV.fetch("CONSUMER_KEY")
-  config.consumer_secret = ENV.fetch("CONSUMER_SECRET")
+  config.consumer_key = ENV.['CONSUMER_KEY']
+  config.consumer_secret = ENV.['CONSUMER_SECRET']
 end

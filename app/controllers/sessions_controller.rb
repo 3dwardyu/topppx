@@ -5,13 +5,15 @@ class SessionsController < ApplicationController
   def create
     @user = User.from_omniauth(request.env["omniauth.auth"])
     session[:user_id] = @user.id
-    session[:secret] = auth.credentials.secret
-    session[:token_secret] = auth.credentials.token
+    session[:token_secret] = auth.credentials.secret
+    session[:token] = auth.credentials.token
     redirect_to '/'
   end
 
   def destroy
     session[:user_id] = nil
+    session[:token_secret] = nil
+    session[:token] = nil
     redirect_to '/'
   end
 

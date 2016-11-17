@@ -1,8 +1,11 @@
 <h1>Popular Photos on 500px</h1>
 <div class="photo-grid">
-<ul class="popular-photos">
+
   <% @photos.each do |photo| %>
-  <li><img class="photos" src="<%= "#{photo['image_url']}" %> "/></li>
+  <%= link_to(image_tag("#{photo['image_url']}"), "https://500px.com/photo/#{photo['id']}") %>
+  <% if current_user %>
+  <%= link_to 'like', vote_path(:photo => "#{photo['id']}") %>
   <% end %>
-</ul>
+  <% end %>
+
 </div>

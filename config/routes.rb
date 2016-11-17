@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'photos/index'
   get '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match 'vote', to: 'photos#vote', as: 'vote', via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
   root 'photos#index'
 

@@ -3,8 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.from_omniauth(env["omniauth.auth"])
-    session[:user_id] = user.id
+    @user = User.from_omniauth(request.env["omniauth.auth"])
+    session[:user_id] = @user.id
+    session[:secret] = auth.credentials.secret
+    session[:token_secret] = auth.credentials.token
     redirect_to '/'
   end
 
@@ -15,5 +17,10 @@ class SessionsController < ApplicationController
 
   def failure
     redirect_to '/'
+  end
+
+  protected
+  def auth
+    request.env['omniauth.auth']
   end
 end

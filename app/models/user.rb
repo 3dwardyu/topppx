@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   def self.from_omniauth(auth)
+    # Creates a user from omniauth and stores requires information
     user = find_or_create_by(provider: auth.provider, uid: auth.uid)
       user.provider = auth.provider
       user.uid = auth.uid

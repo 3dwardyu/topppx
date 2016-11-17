@@ -7,10 +7,10 @@ class PhotosController < ApplicationController
     @photos = JSON.parse(response.body)['photos']
   end
 
-def vote
+  def vote
     @photo_id = params[:photo]
     @client.post("photos/#{@photo_id}/vote?vote=1")
-
+    redirect_to '/'
   end
 
   private

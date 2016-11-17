@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     session[:user_id] = @user.id
     session[:token_secret] = auth.credentials.secret
     session[:token] = auth.credentials.token
+    flash[:success] = "Welcome, #{@user.name}!"
     redirect_to '/'
   end
 
@@ -14,6 +15,7 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     session[:token_secret] = nil
     session[:token] = nil
+    flash[:success] = "Signed out"
     redirect_to '/'
   end
 

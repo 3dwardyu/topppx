@@ -12,6 +12,7 @@ class PhotosController < ApplicationController
     @photo_id = params[:photo]
     @client.post("photos/#{@photo_id}/vote?vote=1")
     redirect_to '/'
+    flash[:notice] = "Photo Liked!"
   end
 
   private

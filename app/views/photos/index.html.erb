@@ -1,11 +1,17 @@
 <%= flash[:notice] %>
 <h1>Popular Photos on 500px</h1>
 <div class="photo-grid">
+  <div id="photos" class="justified-gallery">
   <% @photos.each do |photo| %>
+  <div>
   <%= link_to(image_tag("#{photo['image_url']}"), "https://500px.com/photo/#{photo['id']}") %>
-  <% if current_user %>
-  <%= link_to 'like', vote_path(:photo => "#{photo['id']}") %>
+  <div class="caption">
+    <%= "#{photo['user']['firstname']} #{photo['user']['lastname']}" %>
+    <% if current_user %>
+    <%= link_to 'like', vote_path(:photo => "#{photo['id']}"), :class => "like-button" %>
+    <% end %>
+  </div>
+</div>
   <% end %>
-  <% end %>
-
+</div>
 </div>

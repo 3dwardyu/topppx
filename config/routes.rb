@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get 'photos/index'
   get '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'vote', to: 'photos#vote', as: 'vote', via: [:get, :post]

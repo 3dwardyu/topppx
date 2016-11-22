@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
 
   def index
     # Calls on 500px API through f00px gem to get 100 popular photos
-    response = @client.get('photos?feature=popular&rpp=100')
+    response = @client.get('photos?feature=popular&rpp=100&image_size=20')
     @photos = JSON.parse(response.body)['photos']
   end
 
@@ -11,8 +11,8 @@ class PhotosController < ApplicationController
     # Calls on 500px API through f00px gem to like the photo with the specified id
     @photo_id = params[:photo]
     @client.post("photos/#{@photo_id}/vote?vote=1")
-    redirect_to '/'
     flash[:notice] = "Photo Liked!"
+    redirect_to '/'
   end
 
   private

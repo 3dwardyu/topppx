@@ -8,7 +8,11 @@
   <div class="caption">
     <%= "#{photo['user']['firstname']} #{photo['user']['lastname']}" %>
     <% if current_user %>
-    <%= link_to 'like', vote_path(:photo => "#{photo['id']}"), :class => "like-button" %>
+  <% if photo['liked'] == true %>
+  <%= link_to " Liked", vote_path(:photo => "#{photo['id']}"), :class => "liked-button glyphicon glyphicon-heart" %>
+  <% else %>
+  <%= link_to " Like", vote_path(:photo => "#{photo['id']}"), :class => "like-button glyphicon glyphicon-heart-empty" %>
+  <% end %>
     <% end %>
   </div>
 </div>

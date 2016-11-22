@@ -11,10 +11,18 @@ list-style: none;
 display: inline;
 }
 
-.like-button {
+#user-nav {
   float: right;
 }
 
-#user-nav {
+.like-button {
+  color: white;
+  font-size: 14px;
+  float: right;
+}
+
+.liked-button {
+  color: red;
+  font-size: 14px;
   float: right;
 }

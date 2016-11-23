@@ -1,42 +1,32 @@
-// Place all the styles related to the photos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-h1 {
-  text-align: center;
-}
-
-.popular-photos {
-list-style: none;
-display: inline;
-}
-
-.flash {
-text-align: center;
-}
-
+// Nav bar
 #user-nav {
   float: right;
 }
 
+// Popular photos body
+  // Title area
+h1 {
+  text-align: center;
+}
+
+.flash {
+  text-align: center;
+}
+
+// Caption for photos
 .like-button, .liked-button {
   color: white;
   font-size: 14px;
   float: right;
 }
 
-.liked-button {
-  color: red;
-}
-
-.liked-button:hover {
-  color: white;
-  content: 'Unlike';
-  text-decoration: none;
-}
-
 .like-button:hover {
   color: red;
   content: 'Like';
+  text-decoration: none;
+}
+
+.liked-button, .liked-button:hover {
+  color: red;
   text-decoration: none;
 }

@@ -2,20 +2,20 @@
 <p class="flash"><%= flash[:notice] %></p>
 <div class="photo-grid">
   <div id="photos" class="justified-gallery">
-  <% @photos.each do |photo| %>
-  <div>
-  <%= link_to(image_tag("#{photo['image_url']}"), "https://500px.com/photo/#{photo['id']}") %>
-  <div class="caption">
-    <%= "#{photo['user']['firstname']} #{photo['user']['lastname']}" %>
-    <% if current_user %>
-  <% if photo['liked'] == true %>
-  <a class="liked-button glyphicon glyphicon-heart"> Liked</a>
-  <% else %>
-  <%= link_to " Like", vote_path(:photo => "#{photo['id']}"), :class => "like-button glyphicon glyphicon-heart-empty" %>
-  <% end %>
+    <% @photos.each do |photo| %>
+    <div>
+      <%= link_to(image_tag("#{photo['image_url']}"), "https://500px.com/photo/#{photo['id']}") %>
+      <div class="caption">
+        <%= "#{photo['user']['firstname']} #{photo['user']['lastname']}" %>
+        <% if current_user %>
+          <% if photo['liked'] == true %>
+            <a class="liked-button glyphicon glyphicon-heart"> Liked</a>
+          <% else %>
+            <%= link_to " Like", vote_path(:photo => "#{photo['id']}"), :class => "like-button glyphicon glyphicon-heart-empty" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
     <% end %>
   </div>
-</div>
-  <% end %>
-</div>
 </div>

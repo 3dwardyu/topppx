@@ -2,13 +2,12 @@
 <html>
   <head>
     <title>Toppx</title>
-    <%= csrf_meta_tags %>
+      <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
 
   <body>
@@ -20,9 +19,9 @@
         <div class="nav-bar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav" id="user-nav">
             <% if current_user %>
-            <li><%= link_to 'Logout', signout_url %></li>
+              <li><%= link_to 'Logout', signout_url %></li>
             <% else %>
-            <li><%= link_to 'Login', '/auth/500px' %></li>
+              <li><%= link_to 'Login', '/auth/500px' %></li>
             <% end %>
           </ul>
         </div>

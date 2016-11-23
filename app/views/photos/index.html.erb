@@ -1,5 +1,5 @@
-<%= flash[:notice] %>
 <h1>Popular Photos on 500px</h1>
+<p class="flash"><%= flash[:notice] %></p>
 <div class="photo-grid">
   <div id="photos" class="justified-gallery">
   <% @photos.each do |photo| %>
@@ -9,7 +9,7 @@
     <%= "#{photo['user']['firstname']} #{photo['user']['lastname']}" %>
     <% if current_user %>
   <% if photo['liked'] == true %>
-  <%= link_to " Liked", vote_path(:photo => "#{photo['id']}"), :class => "liked-button glyphicon glyphicon-heart" %>
+  <a class="liked-button glyphicon glyphicon-heart"> Liked</a>
   <% else %>
   <%= link_to " Like", vote_path(:photo => "#{photo['id']}"), :class => "like-button glyphicon glyphicon-heart-empty" %>
   <% end %>

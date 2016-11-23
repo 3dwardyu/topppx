@@ -11,11 +11,15 @@ list-style: none;
 display: inline;
 }
 
+.flash {
+text-align: center;
+}
+
 #user-nav {
   float: right;
 }
 
-.like-button {
+.like-button, .liked-button {
   color: white;
   font-size: 14px;
   float: right;
@@ -23,6 +27,16 @@ display: inline;
 
 .liked-button {
   color: red;
-  font-size: 14px;
-  float: right;
+}
+
+.liked-button:hover {
+  color: white;
+  content: 'Unlike';
+  text-decoration: none;
+}
+
+.like-button:hover {
+  color: red;
+  content: 'Like';
+  text-decoration: none;
 }

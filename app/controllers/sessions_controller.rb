@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-  def new
-  end
-
   def create
     # Creates a new user session using authorization given from omniauth
     @user = User.from_omniauth(request.env["omniauth.auth"])

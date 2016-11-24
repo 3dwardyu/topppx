@@ -16,6 +16,7 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'omniauth'
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -96,4 +97,19 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+# Enables OmniAuth test mode
+OmniAuth.config.test_mode = true
+# Create a mock user with the following data
+omniauth_hash = {:provider => '500px',
+                 :uid => '12345',
+                 :info => { :name => "Edward"
+                 },
+                :credentials => {:token => 'wasdwasd',
+                                 :secret => 'dsawdsaw'
+                                }
+
+                }
+OmniAuth.config.add_mock(:fiveHundredPx, omniauth_hash)
+
 end

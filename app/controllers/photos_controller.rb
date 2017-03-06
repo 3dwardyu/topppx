@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
 
   def index
     # Calls on 500px API through f00px gem to get 100 popular photos
-    response = @client.get('photos?feature=popular&rpp=100&image_size=20&include_states=voted')
+    response = @client.get('photos?feature=popular&rpp=100&image_size=20&nsfw=false&include_states=voted')
     @photos = JSON.parse(response.body)['photos']
   end
 
